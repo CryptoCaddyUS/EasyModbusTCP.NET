@@ -82,11 +82,6 @@ namespace EasyModbus
 		public ModbusClient(string ipAddress, int port)
 		{
 			if (debug) StoreLogData.Instance.Store("EasyModbus library initialized for Modbus-TCP, IPAddress: " + ipAddress + ", Port: "+port ,System.DateTime.Now);
-#if (!COMMERCIAL)
-            Console.WriteLine("EasyModbus Client Library Version: " + Assembly.GetExecutingAssembly().GetName().Version.ToString());
-            Console.WriteLine("Copyright (c) Stefan Rossmann Engineering Solutions");
-            Console.WriteLine();
-#endif
             this.ipAddress = ipAddress;
 			this.port = port;
 		}
@@ -98,11 +93,6 @@ namespace EasyModbus
         public ModbusClient(string serialPort)
         {
         	if (debug) StoreLogData.Instance.Store("EasyModbus library initialized for Modbus-RTU, COM-Port: " + serialPort ,System.DateTime.Now);
-#if (!COMMERCIAL)
-            Console.WriteLine("EasyModbus Client Library Version: " + Assembly.GetExecutingAssembly().GetName().Version.ToString());
-            Console.WriteLine("Copyright (c) Stefan Rossmann Engineering Solutions");
-            Console.WriteLine();
-#endif
             this.serialport = new SerialPort();
             serialport.PortName = serialPort;
             serialport.BaudRate = baudRate;
@@ -120,11 +110,6 @@ namespace EasyModbus
         public ModbusClient()
         {
         	if (debug) StoreLogData.Instance.Store("EasyModbus library initialized for Modbus-TCP" ,System.DateTime.Now);
-#if (!COMMERCIAL)
-            Console.WriteLine("EasyModbus Client Library Version: " + Assembly.GetExecutingAssembly().GetName().Version.ToString());
-            Console.WriteLine("Copyright (c) Stefan Rossmann Engineering Solutions");
-            Console.WriteLine();
-#endif
         }
 		
 		/// <summary>
